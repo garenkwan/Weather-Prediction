@@ -1,0 +1,6 @@
+INFO:root:Attempt 1 of 3 for https://api.data.gov.sg/v1/environment/wind-speed on 2022-02-28
+INFO:root:Attempt 1 of 3 for https://api.data.gov.sg/v1/environment/wind-direction on 2022-02-28
+INFO:root:Attempt 1 of 3 for https://api.data.gov.sg/v1/environment/relative-humidity on 2022-02-28
+INFO:root:Attempt 1 of 3 for https://api.data.gov.sg/v1/environment/rainfall on 2022-02-28
+INFO:root:Attempt 1 of 3 for https://api.data.gov.sg/v1/environment/air-temperature on 2022-02-28
+INFO:root:Wrote to ./data/2022-02-28.csv
