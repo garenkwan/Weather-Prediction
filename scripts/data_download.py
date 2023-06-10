@@ -173,8 +173,8 @@ def process_data(json_file):
     
 if __name__ == '__main__':
     time_format = time.ctime().split()
-    timestamp = [time_format[-1], time_format[1], append_zero(int(time_format[2])), time_format[3]]
-    filename = './logs/' + '_'.join(timestamp) + '.log'
+    timestamp = [time_format[-1], time_format[1], append_zero(int(time_format[2])), time_format[3].replace(':','')]
+    filename = './logs/download_' + '_'.join(timestamp) + '.log'
     logging.basicConfig(filename=filename,
                         format='%(asctime)s %(message)s', 
                         datefmt='%m/%d/%Y %I:%M:%S %p',

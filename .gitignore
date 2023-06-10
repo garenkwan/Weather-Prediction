@@ -1,4 +1,6 @@
 *.ipynb
+*.pyc
+logs/*
 data/2017-01-02.csv
 data/2017-01-03.csv
 data/2017-01-04.csv
