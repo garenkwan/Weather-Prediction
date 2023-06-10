@@ -1,10 +1,10 @@
-import logging, time, yaml
+import logging, yaml#, time
 import pandas as pd
 import numpy as np
 
 from scripts.data_download import append_zero
 
-with open("station_ids.yml", "r") as stream:
+with open("scripts/station_ids.yml", "r") as stream:
     station_ids = yaml.safe_load(stream)
 
 class weatherData:
@@ -17,9 +17,7 @@ class weatherData:
         self.end_date=end_date
         self.training_window=training_window
         self.forecast=forecast
-
-    with open("station_ids.yml", "r") as stream:
-        station_ids = yaml.safe_load(stream)
+        self.station_ids = station_ids
 
     def data_fill_missing(self, df, date):
         hours = set([x for x in range(24)])
@@ -74,7 +72,7 @@ class weatherData:
 
         result = []
         for data_type in data_types:
-            df_index = pd.DataFrame(station_ids, columns=['station_id']).set_index('station_id')
+            df_index = pd.DataFrame(self.station_ids, columns=['station_id']).set_index('station_id')
             df_process = self.df_preprocessing(data, data_type)
             df_T = self.data_transpose(df_process, data_type)            
             df_T = self.data_fill_missing(df_T, date)
